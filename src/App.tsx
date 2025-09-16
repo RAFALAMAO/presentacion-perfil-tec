@@ -15,11 +15,13 @@ function App() {
   const { state: appCtxState } = useContext(AppContext);
 
   return (
-    <Routes>
-      <Route path={`${appCtxState.basePath}`} element={<HomeView />} />
-      <Route path={`${appCtxState.basePath}/test`} element={<div>Test</div>} />
-      <Route path="*" element={<NotFoundView />} />
-    </Routes>
+    <div className="App">
+      <Routes>
+        <Route path={`${appCtxState.basePath}`} element={<HomeView />} />
+
+        <Route path="*" element={<NotFoundView />} />
+      </Routes>
+    </div>
   );
 }
 
