@@ -4,8 +4,7 @@ import styled, { css } from 'styled-components';
 const SlideContainer = styled(motion.div)<{ styleType?: string }>`
   position: relative;
   z-index: 2;
-  width: 100vw;
-  height: 100vh;
+  height: 90vh;
 
   display: flex;
   flex-direction: column;
@@ -15,7 +14,11 @@ const SlideContainer = styled(motion.div)<{ styleType?: string }>`
 
   /* Transparent to let the animated background show through */
   background: rgba(0, 0, 0, 0.6);
+  margin: 2rem;
+  border: 1px solid #cfe9ff;
   color: #cfe9ff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 
   ${({ styleType }) =>
     styleType === 'light' &&

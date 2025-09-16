@@ -9,8 +9,8 @@ export const AppContainer = styled.div`
 
 export const NextButton = styled.button`
   position: absolute;
-  bottom: 2rem;
-  right: 2rem;
+  bottom: 4rem;
+  right: 4rem;
   padding: 0.6rem 1.2rem;
   background-color: #1e3a8a;
   color: white;
@@ -22,8 +22,8 @@ export const NextButton = styled.button`
 
 export const PrevButton = styled.button`
   position: absolute;
-  bottom: 2rem;
-  left: 2rem;
+  bottom: 4rem;
+  left: 4rem;
   padding: 0.6rem 1.2rem;
   background-color: #1e3a8a;
   color: white;
@@ -35,8 +35,8 @@ export const PrevButton = styled.button`
 
 export const PortfolioButton = styled.button`
   position: absolute;
-  bottom: 2rem;
-  left: 2rem;
+  bottom: 4rem;
+  left: 4rem;
   padding: 0.6rem 1.2rem;
   background-color: #811e8aff;
   color: white;
