@@ -10,7 +10,7 @@ import { SLIDES } from '@/constants/slides.const';
 import { AppContainer, NextButton, PortfolioButton, PrevButton } from './HomeViewStyles';
 
 // ** Components
-import MatrixBackground from '@/components/MatrixBackground/MatrixBackground';
+import BackgroundAnimation from '@/components/BackgrooundAnimation/BackgroundAnimation';
 import Slide from '@/components/Slide/Slide';
 
 export default function HomeView() {
@@ -26,7 +26,7 @@ export default function HomeView() {
 
   return (
     <AppContainer>
-      <MatrixBackground />
+      <BackgroundAnimation />
       <AnimatePresence mode="wait" initial={false}>
         {SLIDES[current] && <Slide key={current} data={SLIDES[current]} />}
       </AnimatePresence>

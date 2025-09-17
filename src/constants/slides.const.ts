@@ -4,7 +4,7 @@ export const SLIDES: SlideProps['data'][] = [
   {
     section: 'profile',
     title: 'Desarrollador Fullstack',
-    subtitle: 'Introducción a mi perfil profesional',
+    subtitle: '(Arquitecto de Aplicaciones)',
     image: 'imgs/profile.png',
     name: 'Aarón Juárez Terrazas',
     style: 'dark',
