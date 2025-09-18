@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import styled, { css } from 'styled-components';
 
-const SlideContainer = styled(motion.div)<{ styleType?: string }>`
+export const SlideContainer = styled(motion.div)<{ styleType?: string }>`
   position: relative;
   z-index: 2;
   height: 91%;
@@ -40,31 +40,65 @@ const SlideContainer = styled(motion.div)<{ styleType?: string }>`
     `}
 `;
 
-const Title = styled.h1`
+export const Title = styled.h1`
   font-size: 2.5rem;
   margin-bottom: 0.5rem;
 `;
 
-const Subtitle = styled.p`
+export const Subtitle = styled.p`
   font-size: 1.2rem;
   margin-bottom: 1rem;
 `;
 
-const Name = styled.h2`
+export const Name = styled.h2`
   font-size: 1.5rem;
   margin-top: 1rem;
 `;
 
-const Image = styled.img`
+export const Image = styled.img`
   width: 180px;
   border-radius: 50%;
   margin-top: 1rem;
 `;
 
-const Content = styled.p`
+export const Content = styled.p`
   font-size: 1.1rem;
   max-width: 600px;
   margin-top: 1rem;
 `;
 
-export { Content, Image, Name, SlideContainer, Subtitle, Title };
+export const ImgWithTextContainer = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  height: 100%;
+  margin: auto 5rem;
+  margin-bottom: 80px;
+`;
+
+export const TextRightImg = styled.div`
+  text-align: left;
+  font-size: large;
+  height: 100%;
+  margin-top: 3rem;
+`;
+
+export const LeftImgsContainer = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+  gap: 1rem;
+  height: 100%;
+  margin: auto 5rem;
+  margin-bottom: 80px;
+`;
+
+export const LeftImg = styled.img<{ cover: boolean }>`
+  ${({ cover }) => (cover ? 'object-fit: cover;' : '')}
+  width: 250px;
+  border-radius: 10px;
+  margin-top: 1rem;
+`;

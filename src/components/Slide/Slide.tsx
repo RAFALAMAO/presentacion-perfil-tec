@@ -1,4 +1,15 @@
-import { Content, Image, Name, SlideContainer, Subtitle, Title } from './SlideStyles';
+import {
+  Content,
+  Image,
+  ImgWithTextContainer,
+  LeftImg,
+  LeftImgsContainer,
+  Name,
+  SlideContainer,
+  Subtitle,
+  TextRightImg,
+  Title,
+} from './SlideStyles';
 
 export type SlideProps = {
   data: {
@@ -6,8 +17,10 @@ export type SlideProps = {
     title: string;
     subtitle?: string;
     image?: string;
+    coverImages?: string[];
     name?: string;
     content?: string;
+    contents?: string[];
     style?: 'dark' | 'light' | 'gradient';
   };
 };
@@ -16,9 +29,9 @@ export default function Slide({ data }: SlideProps) {
   return (
     <SlideContainer
       styleType={data.style}
-      initial={{ opacity: 0, x: 100 }}
-      animate={{ opacity: 1, x: 0 }}
-      exit={{ opacity: 0, x: -100 }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
       transition={{ duration: 0.6 }}
     >
       <Title>{data.title}</Title>
@@ -29,7 +42,27 @@ export default function Slide({ data }: SlideProps) {
           {data.name && <Name>{data.name}</Name>}
         </>
       )}
-      {data.section === 'content' && data.content && <Content>{data.content}</Content>}
+      {data.coverImages?.length ? (
+        <ImgWithTextContainer>
+          <LeftImgsContainer>
+            {data.coverImages.map((image, index) => (
+              <LeftImg
+                key={index}
+                src={image}
+                alt={data.title}
+                cover={data.coverImages?.length < 1}
+              />
+            ))}
+          </LeftImgsContainer>
+          <TextRightImg>
+            {data.contents?.map((content, index) => (
+              <p key={index}>{content}</p>
+            ))}
+          </TextRightImg>
+        </ImgWithTextContainer>
+      ) : (
+        data.section === 'content' && data.content && <Content>{data.content}</Content>
+      )}
     </SlideContainer>
   );
 }
