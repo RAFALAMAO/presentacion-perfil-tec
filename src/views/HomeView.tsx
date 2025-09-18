@@ -28,7 +28,7 @@ export default function HomeView() {
     <AppContainer>
       <BackgroundAnimation />
       <AnimatePresence mode="wait" initial={false}>
-        {SLIDES[current] && <Slide key={current} data={SLIDES[current]} />}
+        {SLIDES[current] && <Slide key={current} data={SLIDES[current]} footer={`${current + 1}/${SLIDES.length}`} />}
       </AnimatePresence>
       <NextButton onClick={nextSlide}>Siguiente →</NextButton>
       {current === 0 ? (

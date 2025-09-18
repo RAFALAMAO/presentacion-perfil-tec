@@ -20,34 +20,50 @@ export const SlideContainer = styled(motion.div)<{ styleType?: string }>`
   ${({ styleType }) =>
     styleType === 'dark' &&
     css`
-      background-color: rgba(6, 20, 43, 0.9);
+      background-color: rgba(6, 20, 43, 0.85);
       box-shadow: 0 0 20px rgba(10, 31, 68, 0.5);
       color: #cce4ff;
+
+      & span {
+        color: rgba(50, 146, 255, 1);
+      }
     `}
+
   ${({ styleType }) =>
     styleType === 'light' &&
     css`
-      background-color: rgba(230, 240, 255, 0.9);
+      background-color: rgba(230, 240, 255, 0.85);
       box-shadow: 0 0 20px rgba(230, 240, 255, 0.5);
       color: #1e3a8a;
+
+      & span {
+        color: #040034ff;
+      }
     `}
+
   ${({ styleType }) =>
     styleType === 'gradient' &&
     css`
-      background: linear-gradient(135deg, rgba(30, 58, 138, 0.9), rgba(0, 191, 255, 0.9));
+      background: linear-gradient(135deg, rgba(30, 58, 138, 0.85), rgba(0, 191, 255, 0.85));
       box-shadow: 0 0 20px rgba(0, 191, 255, 0.5);
       color: white;
+
+      & span {
+        color: #00fffbff;
+      }
     `}
+`;
+
+export const Subtitle = styled.span`
+  font-size: 1.2rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
 `;
 
 export const Title = styled.h1`
   font-size: 2.5rem;
-  margin-bottom: 0.5rem;
-`;
-
-export const Subtitle = styled.p`
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 0;
 `;
 
 export const Name = styled.h2`
@@ -79,7 +95,7 @@ export const ImgWithTextContainer = styled.div`
 `;
 
 export const TextRightImg = styled.div`
-  text-align: left;
+  text-align: justify;
   font-size: large;
   height: 100%;
   margin-top: 3rem;
@@ -97,8 +113,14 @@ export const LeftImgsContainer = styled.div`
 `;
 
 export const LeftImg = styled.img<{ cover: boolean }>`
-  ${({ cover }) => (cover ? 'object-fit: cover;' : '')}
-  width: 250px;
+  width: ${({ cover }) => (cover ? '500px' : '250px')};
   border-radius: 10px;
   margin-top: 1rem;
+`;
+
+export const Footer = styled.p`
+  position: absolute;
+  bottom: 1rem;
+  right: 50%;
+  font-size: 0.8rem;
 `;

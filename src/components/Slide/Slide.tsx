@@ -1,5 +1,6 @@
 import {
   Content,
+  Footer,
   Image,
   ImgWithTextContainer,
   LeftImg,
@@ -23,9 +24,10 @@ export type SlideProps = {
     contents?: string[];
     style?: 'dark' | 'light' | 'gradient';
   };
+  footer: string;
 };
 
-export default function Slide({ data }: SlideProps) {
+export default function Slide({ data, footer }: SlideProps) {
   return (
     <SlideContainer
       styleType={data.style}
@@ -50,7 +52,7 @@ export default function Slide({ data }: SlideProps) {
                 key={index}
                 src={image}
                 alt={data.title}
-                cover={data.coverImages?.length < 1}
+                cover={Number(data.coverImages?.length) === 1}
               />
             ))}
           </LeftImgsContainer>
@@ -63,6 +65,7 @@ export default function Slide({ data }: SlideProps) {
       ) : (
         data.section === 'content' && data.content && <Content>{data.content}</Content>
       )}
+      <Footer>{footer}</Footer>
     </SlideContainer>
   );
 }
